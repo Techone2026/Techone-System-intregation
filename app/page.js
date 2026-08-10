@@ -1,48 +1,226 @@
 import Link from "next/link";
-import { cities } from "@/lib/cities";
 import { services } from "@/lib/services";
+import SignalPathDiagram from "@/components/SignalPathDiagram";
+import CTABand from "@/components/CTABand";
 
 export default function Home() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16 flex flex-col gap-20">
-      <section className="flex flex-col gap-4 text-center py-12">
-        <h1 className="text-4xl font-bold">Techone Systems Integration</h1>
-        <p className="text-lg opacity-80 max-w-2xl mx-auto">
-          [Placeholder tagline — one or two sentences describing what Techone
-          Systems Integration does and who it serves.]
-        </p>
-      </section>
-
-      <section id="services" className="flex flex-col gap-6">
-        <h2 className="text-2xl font-semibold">Services</h2>
-        <div className="grid sm:grid-cols-2 gap-6">
-          {services.map((service) => (
-            <div
-              key={service.name}
-              className="border border-black/10 dark:border-white/10 rounded-lg p-5"
-            >
-              <h3 className="font-semibold mb-1">{service.name}</h3>
-              <p className="text-sm opacity-70">{service.description}</p>
+    <main id="top">
+      <section className="hero">
+        <div className="grid-bg"></div>
+        <div className="wrap hero-inner">
+          <div>
+            <span className="eyebrow">
+              AV · Security · Network Integration — Central Ohio
+            </span>
+            <h1>
+              We design, engineer, and deploy the systems your business{" "}
+              <em>runs on.</em>
+            </h1>
+            <p>
+              TechOne Installers&rsquo; Systems Integration division designs
+              and deploys commercial audio/visual, security, digital
+              signage, and structured cabling systems — built for corporate
+              offices, healthcare, education, retail, and hospitality.
+            </p>
+            <div className="hero-ctas">
+              <Link className="btn btn-solid" href="/contact">
+                Request a Site Assessment
+              </Link>
+              <Link className="btn" href="/#work">
+                See Our Work
+              </Link>
             </div>
-          ))}
+          </div>
+
+          <SignalPathDiagram />
         </div>
       </section>
 
-      <section id="locations" className="flex flex-col gap-6">
-        <h2 className="text-2xl font-semibold">Locations</h2>
-        <div className="grid sm:grid-cols-3 gap-6">
-          {cities.map((city) => (
-            <Link
-              key={city.slug}
-              href={`/locations/${city.slug}`}
-              className="border border-black/10 dark:border-white/10 rounded-lg p-5 hover:border-black/30 dark:hover:border-white/30 transition-colors"
-            >
-              <h3 className="font-semibold mb-1">{city.name}</h3>
-              <p className="text-sm opacity-70">{city.blurb}</p>
-            </Link>
-          ))}
+      <div className="proof">
+        <div className="wrap proof-grid">
+          <div>
+            <div className="proof-num">25+</div>
+            <div className="proof-cap">Years in Low Voltage</div>
+          </div>
+          <div>
+            <div className="proof-num">[X]</div>
+            <div className="proof-cap">Commercial Sites Outfitted</div>
+          </div>
+          <div>
+            <div className="proof-num">[Mfr]</div>
+            <div className="proof-cap">Authorized Partner</div>
+          </div>
+          <div>
+            <div className="proof-num">BICSI</div>
+            <div className="proof-cap">Certified Cabling Team*</div>
+          </div>
+        </div>
+      </div>
+
+      <section id="services">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="section-tag">What We Integrate</span>
+            <h2>Six systems. One accountable integrator.</h2>
+            <p>
+              Every system below is designed, installed, tested, and
+              supported by the same team — so nothing falls into the gap
+              between vendors.
+            </p>
+          </div>
+        </div>
+        <div className="wrap">
+          <div className="services-grid">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="service-card"
+              >
+                <span className="service-index mono">
+                  {service.index} / {service.tag}
+                </span>
+                <h3>{service.name}</h3>
+                <p>{service.cardDescription}</p>
+                <span className="service-link">Learn more →</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
-    </div>
+
+      <section id="process">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="section-tag">How We Work</span>
+            <h2>A defined process, not a truck roll.</h2>
+          </div>
+          <div className="process-list">
+            <div className="process-item">
+              <div className="num mono">01</div>
+              <div>
+                <h4>Site Assessment</h4>
+                <p>
+                  We evaluate your space, existing infrastructure, and goals
+                  — on-site when needed — before a single component is
+                  specified.
+                </p>
+              </div>
+            </div>
+            <div className="process-item">
+              <div className="num mono">02</div>
+              <div>
+                <h4>System Design</h4>
+                <p>
+                  A clear plan for what&rsquo;s being installed, where, how
+                  it&rsquo;s wired, and how it performs — reviewed with you
+                  before work begins.
+                </p>
+              </div>
+            </div>
+            <div className="process-item">
+              <div className="num mono">03</div>
+              <div>
+                <h4>Integration &amp; Install</h4>
+                <p>
+                  Our technicians execute with attention to the details that
+                  matter: cable management, testing, labeling, clean
+                  handoff.
+                </p>
+              </div>
+            </div>
+            <div className="process-item">
+              <div className="num mono">04</div>
+              <div>
+                <h4>Support</h4>
+                <p>
+                  We stay available for service, troubleshooting, and future
+                  expansion as your needs change.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="section-tag">Recent Work</span>
+            <h2>Projects across Ohio&rsquo;s commercial spaces.</h2>
+          </div>
+          <div className="case-grid">
+            <div className="case-card">
+              <div className="case-thumb">[ PROJECT PHOTO ]</div>
+              <div className="case-body">
+                <span className="case-tag">Corporate Office</span>
+                <h4>Boardroom AV + Network Cabling</h4>
+                <p>
+                  Full conference room AV integration and structured
+                  cabling for a Columbus-area corporate office.
+                </p>
+                <span className="case-link">Read the project →</span>
+              </div>
+            </div>
+            <div className="case-card">
+              <div className="case-thumb">[ PROJECT PHOTO ]</div>
+              <div className="case-body">
+                <span className="case-tag">Restaurant Chain</span>
+                <h4>Multi-Location Menu Board Rollout</h4>
+                <p>
+                  Digital menu board and kiosk deployment across multiple
+                  regional locations.
+                </p>
+                <span className="case-link">Read the project →</span>
+              </div>
+            </div>
+            <div className="case-card">
+              <div className="case-thumb">[ PROJECT PHOTO ]</div>
+              <div className="case-body">
+                <span className="case-tag">Retail / Healthcare</span>
+                <h4>Security &amp; Access Control Upgrade</h4>
+                <p>
+                  Camera and access control system design and installation
+                  across a growing facility.
+                </p>
+                <span className="case-link">Read the project →</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <span className="section-tag">Client Feedback</span>
+            <h2>What clients say once the job is done.</h2>
+          </div>
+          <div className="testi-grid">
+            <div className="testi-card">
+              <span className="testi-mark">&ldquo;</span>
+              <p>
+                [Real client quote — reliability, communication, or quality
+                of install]
+              </p>
+              <div className="who">NAME, TITLE — COMPANY</div>
+            </div>
+            <div className="testi-card">
+              <span className="testi-mark">&ldquo;</span>
+              <p>[Real client quote]</p>
+              <div className="who">NAME, TITLE — COMPANY</div>
+            </div>
+            <div className="testi-card">
+              <span className="testi-mark">&ldquo;</span>
+              <p>[Real client quote]</p>
+              <div className="who">NAME, TITLE — COMPANY</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTABand />
+    </main>
   );
 }

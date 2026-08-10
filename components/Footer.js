@@ -1,17 +1,65 @@
+import Link from "next/link";
+import { services } from "@/lib/services";
+
 export default function Footer() {
   return (
-    <footer
-      id="contact"
-      className="border-t border-black/10 dark:border-white/10 mt-16"
-    >
-      <div className="max-w-5xl mx-auto px-6 py-10 text-sm flex flex-col gap-2">
-        <p className="font-semibold">Techone Systems Integration</p>
-        <p>[ADDRESS PLACEHOLDER]</p>
-        <p>[PHONE NUMBER] &middot; [EMAIL ADDRESS]</p>
-        <p className="opacity-60">
-          &copy; {new Date().getFullYear()} Techone Systems Integration. All
-          rights reserved.
-        </p>
+    <footer>
+      <div className="wrap">
+        <div className="footer-grid">
+          <div style={{ maxWidth: 320 }}>
+            <Link
+              className="logo"
+              href="/"
+              aria-label="TechOne Installers — Systems Integration"
+            >
+              <span className="logo-mark">T1</span>
+              <span className="logo-text">
+                <span className="logo-name">TECHONE INSTALLERS</span>
+                <span className="logo-sub">SYSTEMS INTEGRATION</span>
+              </span>
+            </Link>
+            <p>
+              Commercial AV, security, and network integration for Central
+              Ohio and surrounding states — serving commercial clients since
+              2000.
+            </p>
+          </div>
+          <div className="footer-cols">
+            <div className="footer-col">
+              <h5>Services</h5>
+              <ul>
+                {services.map((service) => (
+                  <li key={service.slug}>
+                    <Link href={`/services/${service.slug}`}>
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="footer-col">
+              <h5>Company</h5>
+              <ul>
+                <li>
+                  <Link href="/about">About</Link>
+                </li>
+                <li>
+                  <Link href="/#work">Our Work</Link>
+                </li>
+                <li>
+                  <Link href="/commercial">Commercial & Enterprise</Link>
+                </li>
+                <li>
+                  <Link href="/contact">Contact</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="copyright">
+          &copy; {new Date().getFullYear()} TECHONE INSTALLERS — SYSTEMS
+          INTEGRATION DIVISION — LICENSED &amp; INSURED — CENTRAL OHIO
+        </div>
       </div>
     </footer>
   );
