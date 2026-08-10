@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/services";
-import LogoMark from "@/components/LogoMark";
+import logoMark from "@/public/images/logo-mark.png";
 
 export default function Footer() {
   return (
@@ -13,7 +14,7 @@ export default function Footer() {
               href="/"
               aria-label="TechOne Installers — Systems Integration"
             >
-              <LogoMark className="logo-icon" />
+              <Image src={logoMark} alt="" className="logo-icon" />
               <span className="logo-text">
                 <span className="logo-name">TECHONE INSTALLERS</span>
                 <span className="logo-sub">SYSTEMS INTEGRATION</span>

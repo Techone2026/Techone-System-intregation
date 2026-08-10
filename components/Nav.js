@@ -1,5 +1,6 @@
 import Link from "next/link";
-import LogoMark from "@/components/LogoMark";
+import Image from "next/image";
+import logoMark from "@/public/images/logo-mark.png";
 
 export default function Nav() {
   return (
@@ -11,7 +12,12 @@ export default function Nav() {
             href="/"
             aria-label="TechOne Installers — Systems Integration"
           >
-            <LogoMark className="logo-icon" />
+            <Image
+              src={logoMark}
+              alt=""
+              className="logo-icon"
+              priority
+            />
             <span className="logo-text">
               <span className="logo-name">TECHONE INSTALLERS</span>
               <span className="logo-sub">SYSTEMS INTEGRATION</span>
