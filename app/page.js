@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/lib/services";
+import { caseStudies } from "@/lib/caseStudies";
 import SignalPathDiagram from "@/components/SignalPathDiagram";
 import CTABand from "@/components/CTABand";
 
@@ -151,42 +152,27 @@ export default function Home() {
             <h2>Projects across Ohio&rsquo;s commercial spaces.</h2>
           </div>
           <div className="case-grid">
-            <div className="case-card">
-              <div className="case-thumb">[ PROJECT PHOTO ]</div>
-              <div className="case-body">
-                <span className="case-tag">Corporate Office</span>
-                <h4>Boardroom AV + Network Cabling</h4>
-                <p>
-                  Full conference room AV integration and structured
-                  cabling for a Columbus-area corporate office.
-                </p>
-                <span className="case-link">Read the project →</span>
-              </div>
-            </div>
-            <div className="case-card">
-              <div className="case-thumb">[ PROJECT PHOTO ]</div>
-              <div className="case-body">
-                <span className="case-tag">Restaurant Chain</span>
-                <h4>Multi-Location Menu Board Rollout</h4>
-                <p>
-                  Digital menu board and kiosk deployment across multiple
-                  regional locations.
-                </p>
-                <span className="case-link">Read the project →</span>
-              </div>
-            </div>
-            <div className="case-card">
-              <div className="case-thumb">[ PROJECT PHOTO ]</div>
-              <div className="case-body">
-                <span className="case-tag">Retail / Healthcare</span>
-                <h4>Security &amp; Access Control Upgrade</h4>
-                <p>
-                  Camera and access control system design and installation
-                  across a growing facility.
-                </p>
-                <span className="case-link">Read the project →</span>
-              </div>
-            </div>
+            {caseStudies.map((project) => (
+              <Link
+                key={project.slug}
+                href={`/work/${project.slug}`}
+                className="case-card"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <div className="case-thumb">[ PROJECT PHOTO ]</div>
+                <div className="case-body">
+                  <span className="case-tag">{project.tag}</span>
+                  <h4>{project.title}</h4>
+                  <p>{project.summary}</p>
+                  <span className="case-link">Read the project →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div style={{ marginTop: 32 }}>
+            <Link className="btn" href="/work">
+              See All Projects →
+            </Link>
           </div>
         </div>
       </section>
