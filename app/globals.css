@@ -3,12 +3,17 @@
   --navy-deep: #0a1d30;
   --panel: #16354f;
   --panel-line: #2b4e6c;
-  --copper: #c87941;
-  --copper-bright: #e0965c;
+  --accent: #c0392b;
+  --accent-bright: #e05243;
   --led: #4caf7d;
   --chalk: #edf1f4;
   --mist: #8ca3b8;
   --mist-dim: #5f788a;
+  --white: #ffffff;
+  --off-white: #f7f8fa;
+  --ink: #1a1a1a;
+  --ink-mist: #55606b;
+  --hairline: #e2e5e8;
 }
 
 * {
@@ -51,7 +56,7 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--copper-bright);
+  outline: 2px solid var(--accent-bright);
   outline-offset: 3px;
 }
 
@@ -90,9 +95,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 29, 48, 0.92);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--panel-line);
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
 }
 nav {
   display: flex;
@@ -112,13 +118,13 @@ nav {
 .logo-mark {
   width: 30px;
   height: 30px;
-  border: 1.5px solid var(--copper);
+  border: 1.5px solid var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
   flex-shrink: 0;
 }
 .logo-text {
@@ -134,7 +140,7 @@ nav {
   font-family: var(--font-mono);
   font-weight: 400;
   font-size: 0.6rem;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
   letter-spacing: 0.1em;
 }
 @media (max-width: 520px) {
@@ -149,14 +155,14 @@ nav {
   margin: 0;
   padding: 0;
   font-size: 0.92rem;
-  color: var(--mist);
+  color: var(--ink-mist);
 }
 .navlinks a {
   text-decoration: none;
   transition: color 0.15s;
 }
 .navlinks a:hover {
-  color: var(--chalk);
+  color: var(--ink);
 }
 @media (max-width: 860px) {
   .navlinks {
@@ -171,7 +177,7 @@ nav {
   font-family: var(--font-mono);
   font-size: 0.82rem;
   text-decoration: none;
-  border: 1px solid var(--copper);
+  border: 1px solid var(--accent);
   color: var(--chalk);
   background: transparent;
   transition: background 0.15s, color 0.15s;
@@ -179,17 +185,17 @@ nav {
   cursor: pointer;
 }
 .btn:hover {
-  background: var(--copper);
+  background: var(--accent);
   color: var(--navy-deep);
 }
 .btn-solid {
-  background: var(--copper);
+  background: var(--accent);
   color: var(--navy-deep);
-  border-color: var(--copper);
+  border-color: var(--accent);
 }
 .btn-solid:hover {
-  background: var(--copper-bright);
-  border-color: var(--copper-bright);
+  background: var(--accent-bright);
+  border-color: var(--accent-bright);
 }
 
 /* Hero */
@@ -219,7 +225,7 @@ nav {
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -227,7 +233,7 @@ nav {
   content: "";
   width: 16px;
   height: 1px;
-  background: var(--copper-bright);
+  background: var(--accent-bright);
 }
 
 .hero h1 {
@@ -239,7 +245,7 @@ nav {
 }
 .hero h1 em {
   font-style: normal;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
 }
 .hero p {
   font-size: 1.08rem;
@@ -287,7 +293,7 @@ svg.riser {
 }
 .riser-path {
   fill: none;
-  stroke: var(--copper);
+  stroke: var(--accent);
   stroke-width: 2;
   stroke-dasharray: 6 5;
   animation: flow 2.2s linear infinite;
@@ -299,7 +305,7 @@ svg.riser {
 }
 .riser-node circle {
   fill: var(--panel);
-  stroke: var(--copper-bright);
+  stroke: var(--accent-bright);
   stroke-width: 1.6;
 }
 .riser-node text {
@@ -342,7 +348,7 @@ svg.riser {
   font-family: var(--font-display);
   font-size: 1.7rem;
   font-weight: 700;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
 }
 .proof-cap {
   font-family: var(--font-mono);
@@ -364,7 +370,7 @@ section {
 .section-tag {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 14px;
@@ -429,12 +435,12 @@ section {
 .service-card .service-link {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 .service-card:hover .service-link {
-  border-bottom-color: var(--copper-bright);
+  border-bottom-color: var(--accent-bright);
 }
 
 /* Process */
@@ -450,7 +456,7 @@ section {
 }
 .process-item .num {
   font-family: var(--font-mono);
-  color: var(--copper);
+  color: var(--accent);
   font-size: 0.95rem;
   padding-top: 2px;
 }
@@ -502,7 +508,7 @@ section {
 .case-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--copper-bright);
+  color: var(--accent-bright);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -541,7 +547,7 @@ section {
   padding: 26px;
 }
 .testi-mark {
-  color: var(--copper);
+  color: var(--accent);
   font-size: 1.8rem;
   font-family: var(--font-display);
   display: block;
@@ -577,6 +583,9 @@ section {
 }
 
 footer {
+  background: var(--white);
+  color: var(--ink);
+  border-top: 1px solid var(--hairline);
   padding: 48px 0 36px;
 }
 .footer-grid {
@@ -584,14 +593,12 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
-  border-top: 1px solid var(--panel-line);
-  padding-top: 32px;
 }
 footer .logo {
   margin-bottom: 10px;
 }
 footer p {
-  color: var(--mist-dim);
+  color: var(--ink-mist);
   font-size: 0.85rem;
   max-width: 38ch;
 }
@@ -603,7 +610,7 @@ footer p {
 .footer-col h5 {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--mist);
+  color: var(--ink-mist);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 14px;
@@ -619,16 +626,16 @@ footer p {
 .footer-col a {
   font-size: 0.88rem;
   text-decoration: none;
-  color: var(--mist);
+  color: var(--ink-mist);
 }
 .footer-col a:hover {
-  color: var(--chalk);
+  color: var(--accent);
 }
 .copyright {
   margin-top: 36px;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: var(--mist-dim);
+  color: var(--ink-mist);
 }
 
 /* Generic inner-page section (About / Commercial / Services / Contact) */
@@ -672,12 +679,12 @@ footer p {
   top: 9px;
   width: 8px;
   height: 1px;
-  background: var(--copper);
+  background: var(--accent);
 }
 .quote-block {
   background: var(--panel);
   border: 1px solid var(--panel-line);
-  border-left: 3px solid var(--copper);
+  border-left: 3px solid var(--accent);
   padding: 26px 28px;
   margin: 32px 0;
 }
@@ -735,7 +742,7 @@ footer p {
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  outline: 2px solid var(--copper-bright);
+  outline: 2px solid var(--accent-bright);
   outline-offset: 1px;
 }
 .form-note {
