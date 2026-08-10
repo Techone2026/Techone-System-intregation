@@ -1,4 +1,6 @@
+import Image from "next/image";
 import CTABand from "@/components/CTABand";
+import sheldonPhoto from "@/public/images/sheldon-lambert.jpg";
 
 export const metadata = {
   title: "About | TechOne Installers",
@@ -47,18 +49,28 @@ export default function AboutPage() {
             Ohio and surrounding states.
           </p>
 
-          <div className="quote-block">
-            <p>
-              &ldquo;Every project we take on is a commitment, not just a
-              task. I&rsquo;m personally invested in making sure our promise
-              — swift, high-quality, well-integrated systems — is something
-              our clients actually experience, not just something we say. We
-              work with leading manufacturers and stay current on the
-              technology our clients depend on, because this isn&rsquo;t
-              just a business for me. It&rsquo;s a craft, and I want us to
-              get it right every time.&rdquo;
-            </p>
-            <div className="who">SHELDON LAMBERT, CEO, TECHONE INSTALLERS</div>
+          <div className="ceo-block">
+            <div className="ceo-photo">
+              <Image
+                src={sheldonPhoto}
+                alt="Sheldon Lambert, CEO of TechOne Installers"
+              />
+            </div>
+            <div className="quote-block">
+              <p>
+                &ldquo;Every project we take on is a commitment, not just a
+                task. I&rsquo;m personally invested in making sure our
+                promise — swift, high-quality, well-integrated systems — is
+                something our clients actually experience, not just
+                something we say. We work with leading manufacturers and
+                stay current on the technology our clients depend on,
+                because this isn&rsquo;t just a business for me. It&rsquo;s
+                a craft, and I want us to get it right every time.&rdquo;
+              </p>
+              <div className="who">
+                SHELDON LAMBERT, CEO, TECHONE INSTALLERS
+              </div>
+            </div>
           </div>
         </div>
       </section>
