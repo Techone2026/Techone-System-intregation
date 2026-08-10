@@ -115,16 +115,9 @@ nav {
   font-size: 1.15rem;
   text-decoration: none;
 }
-.logo-mark {
-  width: 30px;
-  height: 30px;
-  border: 1.5px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--accent-bright);
+.logo-icon {
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
 }
 .logo-text {
