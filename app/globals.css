@@ -697,6 +697,15 @@ footer p {
   object-fit: cover;
   display: block;
 }
+.service-photo {
+  border: 1px solid var(--panel-line);
+  overflow: hidden;
+}
+.service-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .quote-block {
   background: var(--panel);
   border: 1px solid var(--panel-line);

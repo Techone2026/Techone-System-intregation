@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { services, getService } from "@/lib/services";
+import { serviceImages } from "@/lib/serviceImages";
 import CTABand from "@/components/CTABand";
 
 export function generateStaticParams() {
@@ -20,6 +22,7 @@ export default async function ServicePage({ params }) {
   const { slug } = await params;
   const service = getService(slug);
   if (!service) notFound();
+  const photo = serviceImages[service.slug];
 
   return (
     <main>
@@ -43,6 +46,20 @@ export default async function ServicePage({ params }) {
           <p className="prose">{service.intro}</p>
         </div>
       </section>
+
+      {photo && (
+        <section style={{ paddingTop: 0 }}>
+          <div className="wrap">
+            <div className="service-photo">
+              <Image
+                src={photo}
+                alt={`${service.name} installation example`}
+                sizes="(max-width: 900px) 100vw, 1116px"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       <section style={{ paddingTop: 0 }}>
         <div
