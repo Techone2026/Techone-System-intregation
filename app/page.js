@@ -1,6 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/services";
 import { caseStudies } from "@/lib/caseStudies";
+import { serviceImages } from "@/lib/serviceImages";
 import SignalPathDiagram from "@/components/SignalPathDiagram";
 import CTABand from "@/components/CTABand";
 
@@ -79,6 +81,15 @@ export default function Home() {
                 href={`/services/${service.slug}`}
                 className="service-card"
               >
+                {serviceImages[service.slug] && (
+                  <div className="service-card-thumb">
+                    <Image
+                      src={serviceImages[service.slug]}
+                      alt={`${service.name} example`}
+                      sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    />
+                  </div>
+                )}
                 <span className="service-index mono">
                   {service.index} / {service.tag}
                 </span>
