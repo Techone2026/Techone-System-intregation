@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import CTABand from "@/components/CTABand";
 import sheldonPhoto from "@/public/images/sheldon-lambert.jpg";
@@ -114,11 +115,27 @@ export default function AboutPage() {
           <div>
             <span className="section-tag">Who We Work With</span>
             <ul className="audience-list">
-              <li>Corporate offices</li>
-              <li>Healthcare facilities</li>
-              <li>Educational institutions</li>
-              <li>Retail environments</li>
-              <li>Restaurants &amp; hospitality</li>
+              <li>
+                <Link href="/industries/corporate-offices">
+                  Corporate offices
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/healthcare">Healthcare facilities</Link>
+              </li>
+              <li>
+                <Link href="/industries/education">
+                  Educational institutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/industries/retail">Retail environments</Link>
+              </li>
+              <li>
+                <Link href="/industries/restaurant-hospitality">
+                  Restaurants &amp; hospitality
+                </Link>
+              </li>
               <li>Property managers &amp; GCs</li>
             </ul>
           </div>

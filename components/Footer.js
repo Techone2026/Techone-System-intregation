@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/services";
+import { verticals } from "@/lib/verticals";
 import { business } from "@/lib/business";
 import logoMark from "@/public/images/logo-mark.png";
 
@@ -40,6 +41,18 @@ export default function Footer() {
                   <li key={service.slug}>
                     <Link href={`/services/${service.slug}`}>
                       {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="footer-col">
+              <h5>Industries</h5>
+              <ul>
+                {verticals.map((vertical) => (
+                  <li key={vertical.slug}>
+                    <Link href={`/industries/${vertical.slug}`}>
+                      {vertical.name}
                     </Link>
                   </li>
                 ))}

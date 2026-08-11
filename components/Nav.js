@@ -8,6 +8,7 @@ import logoMark from "@/public/images/logo-mark.png";
 
 const NAV_LINKS = [
   { href: "/#services", label: "Services" },
+  { href: "/industries", label: "Industries" },
   { href: "/work", label: "Our Work" },
   { href: "/about", label: "About" },
   { href: "/commercial", label: "Commercial" },
