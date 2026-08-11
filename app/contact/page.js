@@ -1,4 +1,5 @@
 import { services } from "@/lib/services";
+import { business } from "@/lib/business";
 
 export const metadata = {
   title: "Contact | TechOne Installers",
@@ -26,6 +27,16 @@ export default function ContactPage() {
           <p className="prose">
             Tell us what you&rsquo;re working with, and we&rsquo;ll follow up
             to discuss next steps — including a site assessment if needed.
+          </p>
+          <p className="prose" style={{ marginTop: 18 }}>
+            Prefer to reach us directly?{" "}
+            <a href={business.phoneHref} style={{ color: "var(--accent-bright)" }}>
+              {business.phone}
+            </a>{" "}
+            &middot;{" "}
+            <a href={business.emailHref} style={{ color: "var(--accent-bright)" }}>
+              {business.email}
+            </a>
           </p>
         </div>
       </section>

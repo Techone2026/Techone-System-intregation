@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/services";
+import { business } from "@/lib/business";
 import logoMark from "@/public/images/logo-mark.png";
 
 export default function Footer() {
@@ -24,6 +25,11 @@ export default function Footer() {
               Commercial AV, security, and network integration for Central
               Ohio and surrounding states — serving commercial clients since
               2000.
+            </p>
+            <p style={{ marginTop: 12 }}>
+              <a href={business.phoneHref}>{business.phone}</a>
+              <br />
+              <a href={business.emailHref}>{business.email}</a>
             </p>
           </div>
           <div className="footer-cols">
