@@ -453,17 +453,8 @@ section {
   border-top: 1px solid var(--panel-line);
 }
 .process-item {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 24px;
   padding: 26px 0;
   border-bottom: 1px solid var(--panel-line);
-}
-.process-item .num {
-  font-family: var(--font-mono);
-  color: var(--accent);
-  font-size: 0.95rem;
-  padding-top: 2px;
 }
 .process-item h4 {
   font-size: 1.05rem;

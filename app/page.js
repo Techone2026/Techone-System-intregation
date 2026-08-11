@@ -107,7 +107,6 @@ export default function Home() {
           </div>
           <div className="process-list">
             <div className="process-item">
-              <div className="num mono">01</div>
               <div>
                 <h4>Site Assessment</h4>
                 <p>
@@ -118,7 +117,6 @@ export default function Home() {
               </div>
             </div>
             <div className="process-item">
-              <div className="num mono">02</div>
               <div>
                 <h4>System Design</h4>
                 <p>
@@ -129,7 +127,6 @@ export default function Home() {
               </div>
             </div>
             <div className="process-item">
-              <div className="num mono">03</div>
               <div>
                 <h4>Integration &amp; Install</h4>
                 <p>
@@ -140,7 +137,6 @@ export default function Home() {
               </div>
             </div>
             <div className="process-item">
-              <div className="num mono">04</div>
               <div>
                 <h4>Support</h4>
                 <p>
