@@ -90,9 +90,6 @@ export default function Home() {
                     />
                   </div>
                 )}
-                <span className="service-index mono">
-                  {service.index} / {service.tag}
-                </span>
                 <h3>{service.name}</h3>
                 <p>{service.cardDescription}</p>
                 <span className="service-link">Learn more →</span>
