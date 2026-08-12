@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { verticals } from "@/lib/verticals";
+import IndustryIcon from "@/components/IndustryIcon";
 import CTABand from "@/components/CTABand";
 
 export const metadata = {
@@ -42,6 +43,10 @@ export default function IndustriesPage() {
                 href={`/industries/${vertical.slug}`}
                 className="service-card"
               >
+                <IndustryIcon
+                  slug={vertical.slug}
+                  className="industry-card-icon"
+                />
                 <h3>{vertical.name}</h3>
                 <p>{vertical.tagline}</p>
                 <span className="service-link">Learn more →</span>

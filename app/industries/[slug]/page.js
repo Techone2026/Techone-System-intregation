@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { verticals, getVertical } from "@/lib/verticals";
 import { getService } from "@/lib/services";
+import IndustryIcon from "@/components/IndustryIcon";
 import CTABand from "@/components/CTABand";
 
 export function generateStaticParams() {
@@ -32,6 +33,9 @@ export default async function VerticalPage({ params }) {
       <section className="page-hero">
         <div className="grid-bg"></div>
         <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
+          <div className="industry-icon-badge">
+            <IndustryIcon slug={vertical.slug} />
+          </div>
           <span className="eyebrow">Industries / {vertical.name}</span>
           <h1
             style={{

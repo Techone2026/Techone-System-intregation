@@ -839,6 +839,25 @@ footer p a:hover {
   height: auto;
   display: block;
 }
+.industry-icon-badge {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--panel-line);
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+.industry-icon-badge svg {
+  width: 34px;
+  height: 34px;
+}
+.industry-card-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+}
 .quote-block {
   background: var(--panel);
   border: 1px solid var(--panel-line);
