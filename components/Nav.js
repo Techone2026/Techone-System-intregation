@@ -14,6 +14,19 @@ const NAV_LINKS = [
   { href: "/commercial", label: "Commercial" },
 ];
 
+function handleHashNavClick(event, href, pathname) {
+  const [path, hash] = href.split("#");
+  if (!hash) return;
+  const targetPath = path || "/";
+  if (pathname === targetPath) {
+    event.preventDefault();
+    const el = document.getElementById(hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+}
+
 export default function Nav() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -45,6 +58,9 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   className={pathname === link.href ? "active" : undefined}
+                  onClick={(event) =>
+                    handleHashNavClick(event, link.href, pathname)
+                  }
                 >
                   {link.label}
                 </Link>
@@ -77,7 +93,10 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   className={pathname === link.href ? "active" : undefined}
-                  onClick={() => setOpen(false)}
+                  onClick={(event) => {
+                    handleHashNavClick(event, link.href, pathname);
+                    setOpen(false);
+                  }}
                 >
                   {link.label}
                 </Link>
