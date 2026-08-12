@@ -47,7 +47,7 @@ export default function Home() {
             <div className="proof-cap">Years in Low Voltage</div>
           </div>
           <div>
-            <div className="proof-num">[X]</div>
+            <div className="proof-num">2,800+</div>
             <div className="proof-cap">Commercial Sites Outfitted</div>
           </div>
           <div>
