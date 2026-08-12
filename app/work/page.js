@@ -3,11 +3,14 @@ import Image from "next/image";
 import { caseStudies } from "@/lib/caseStudies";
 import { workImages } from "@/lib/workImages";
 import CTABand from "@/components/CTABand";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Our Work | TechOne Installers",
-  description: "Projects across Ohio's commercial spaces.",
-};
+  description:
+    "Real commercial AV, security, and digital signage installations for clients like Starbucks, Dick's Sporting Goods, PNC Bank, and more across Central Ohio.",
+  path: "/work",
+});
 
 export default function WorkPage() {
   return (

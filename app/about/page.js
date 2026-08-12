@@ -2,12 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import CTABand from "@/components/CTABand";
 import sheldonPhoto from "@/public/images/sheldon-lambert.jpg";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "About | TechOne Installers",
   description:
-    "25+ years designing and building the systems commercial spaces run on.",
-};
+    "25+ years designing and building the AV, security, and network systems commercial spaces in Central Ohio run on — licensed, insured, and BICSI-affiliated.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

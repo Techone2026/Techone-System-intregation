@@ -4,6 +4,7 @@ import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
 import { workImages } from "@/lib/workImages";
 import { workGallery } from "@/lib/workGallery";
 import CTABand from "@/components/CTABand";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return caseStudies.map((project) => ({ slug: project.slug }));
@@ -13,10 +14,11 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const project = getCaseStudy(slug);
   if (!project) return {};
-  return {
+  return buildMetadata({
     title: `${project.title} | TechOne Installers`,
     description: project.summary,
-  };
+    path: `/work/${project.slug}`,
+  });
 }
 
 export default async function CaseStudyPage({ params }) {

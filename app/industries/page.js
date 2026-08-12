@@ -2,12 +2,14 @@ import Link from "next/link";
 import { verticals } from "@/lib/verticals";
 import IndustryIcon from "@/components/IndustryIcon";
 import CTABand from "@/components/CTABand";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Industries We Serve | TechOne Installers",
   description:
     "Commercial AV, security, and network integration for corporate offices, healthcare, education, retail, and restaurant & hospitality clients across Central Ohio.",
-};
+  path: "/industries",
+});
 
 export default function IndustriesPage() {
   return (

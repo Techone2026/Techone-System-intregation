@@ -1,10 +1,13 @@
 import { services } from "@/lib/services";
 import { business } from "@/lib/business";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Contact | TechOne Installers",
-  description: "Let's talk about your project.",
-};
+  description:
+    "Request a site assessment for commercial AV, security, or network cabling in Central Ohio. Call (740) 419-1178 or reach our Columbus, OH office.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
@@ -37,6 +40,12 @@ export default function ContactPage() {
             <a href={business.emailHref} style={{ color: "var(--accent-bright)" }}>
               {business.email}
             </a>
+          </p>
+          <p className="prose" style={{ marginTop: 10 }}>
+            {business.address.street}
+            <br />
+            {business.address.city}, {business.address.state}{" "}
+            {business.address.zip}
           </p>
         </div>
       </section>

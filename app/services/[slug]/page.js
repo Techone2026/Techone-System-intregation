@@ -3,6 +3,7 @@ import Image from "next/image";
 import { services, getService } from "@/lib/services";
 import { serviceImages } from "@/lib/serviceImages";
 import CTABand from "@/components/CTABand";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
@@ -12,10 +13,11 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return {};
-  return {
+  return buildMetadata({
     title: `${service.name} Integration | TechOne Systems Integration`,
     description: service.cardDescription,
-  };
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default async function ServicePage({ params }) {

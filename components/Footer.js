@@ -32,6 +32,12 @@ export default function Footer() {
               <br />
               <a href={business.emailHref}>{business.email}</a>
             </p>
+            <p style={{ marginTop: 12 }}>
+              {business.address.street}
+              <br />
+              {business.address.city}, {business.address.state}{" "}
+              {business.address.zip}
+            </p>
           </div>
           <div className="footer-cols">
             <div className="footer-col">

@@ -4,6 +4,7 @@ import { verticals, getVertical } from "@/lib/verticals";
 import { getService } from "@/lib/services";
 import IndustryIcon from "@/components/IndustryIcon";
 import CTABand from "@/components/CTABand";
+import { buildMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return verticals.map((vertical) => ({ slug: vertical.slug }));
@@ -13,10 +14,11 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const vertical = getVertical(slug);
   if (!vertical) return {};
-  return {
+  return buildMetadata({
     title: `${vertical.name} | TechOne Systems Integration`,
     description: vertical.intro,
-  };
+    path: `/industries/${vertical.slug}`,
+  });
 }
 
 export default async function VerticalPage({ params }) {

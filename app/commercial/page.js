@@ -1,10 +1,12 @@
 import CTABand from "@/components/CTABand";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildMetadata({
   title: "Commercial & Enterprise | TechOne Systems Integration",
   description:
-    "One integrator for AV, security, and infrastructure — from design through support.",
-};
+    "One integrator for commercial AV, security, and network infrastructure — from design through installation and ongoing support, for multi-location and enterprise clients.",
+  path: "/commercial",
+});
 
 export default function CommercialPage() {
   return (
