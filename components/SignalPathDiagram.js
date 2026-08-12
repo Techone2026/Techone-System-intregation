@@ -5,7 +5,6 @@ export default function SignalPathDiagram() {
         <span>
           <span className="dot"></span>SYSTEM SIGNAL PATH
         </span>
-        <span>FIG. 01</span>
       </div>
       <svg
         className="riser"
