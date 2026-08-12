@@ -163,7 +163,7 @@ export default function Home() {
             <h2>Projects across Ohio&rsquo;s commercial spaces.</h2>
           </div>
           <div className="case-grid">
-            {caseStudies.map((project) => (
+            {caseStudies.slice(0, 3).map((project) => (
               <Link
                 key={project.slug}
                 href={`/work/${project.slug}`}
