@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
+import { workImages } from "@/lib/workImages";
 import CTABand from "@/components/CTABand";
 
 export function generateStaticParams() {
@@ -26,7 +28,10 @@ export default async function CaseStudyPage({ params }) {
       <section className="page-hero">
         <div className="grid-bg"></div>
         <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
-          <span className="eyebrow">{project.tag}</span>
+          <span className="eyebrow">
+            {project.tag}
+            {project.client ? ` · ${project.client}` : ""}
+          </span>
           <h1
             style={{
               fontSize: "clamp(1.9rem, 3.4vw, 2.6rem)",
@@ -44,8 +49,21 @@ export default async function CaseStudyPage({ params }) {
 
       <section style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <div className="case-thumb" style={{ height: 280, marginBottom: 32 }}>
-            [ PROJECT PHOTO ]
+          <div
+            className="case-thumb"
+            style={{ height: 280, marginBottom: 32 }}
+          >
+            {workImages[project.slug] ? (
+              <Image
+                src={workImages[project.slug]}
+                alt={`${project.title} photo`}
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 900px) 100vw, 1116px"
+              />
+            ) : (
+              "[ PROJECT PHOTO ]"
+            )}
           </div>
           <p className="prose">{project.body}</p>
         </div>

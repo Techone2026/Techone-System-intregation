@@ -599,6 +599,7 @@ section {
 }
 .case-thumb {
   height: 150px;
+  position: relative;
   background: repeating-linear-gradient(
     135deg,
     var(--panel) 0 12px,

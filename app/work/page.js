@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { caseStudies } from "@/lib/caseStudies";
+import { workImages } from "@/lib/workImages";
 import CTABand from "@/components/CTABand";
 
 export const metadata = {
@@ -38,9 +40,24 @@ export default function WorkPage() {
                 className="case-card"
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <div className="case-thumb">[ PROJECT PHOTO ]</div>
+                <div className="case-thumb">
+                  {workImages[project.slug] ? (
+                    <Image
+                      src={workImages[project.slug]}
+                      alt={`${project.title} photo`}
+                      fill
+                      style={{ objectFit: "cover" }}
+                      sizes="(max-width: 900px) 100vw, 33vw"
+                    />
+                  ) : (
+                    "[ PROJECT PHOTO ]"
+                  )}
+                </div>
                 <div className="case-body">
-                  <span className="case-tag">{project.tag}</span>
+                  <span className="case-tag">
+                    {project.tag}
+                    {project.client ? ` · ${project.client}` : ""}
+                  </span>
                   <h4>{project.title}</h4>
                   <p>{project.summary}</p>
                   <span className="case-link">Read the project →</span>
