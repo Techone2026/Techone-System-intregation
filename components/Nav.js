@@ -26,6 +26,12 @@ export default function Nav() {
             className="logo"
             href="/"
             aria-label="TechOne Installers — Systems Integration"
+            onClick={() => {
+              if (pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+              setOpen(false);
+            }}
           >
             <Image src={logoMark} alt="" className="logo-icon" priority />
             <span className="logo-text">
