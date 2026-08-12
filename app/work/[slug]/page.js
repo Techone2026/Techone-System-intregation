@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { caseStudies, getCaseStudy } from "@/lib/caseStudies";
 import { workImages } from "@/lib/workImages";
+import { workGallery } from "@/lib/workGallery";
 import CTABand from "@/components/CTABand";
 
 export function generateStaticParams() {
@@ -22,6 +23,7 @@ export default async function CaseStudyPage({ params }) {
   const { slug } = await params;
   const project = getCaseStudy(slug);
   if (!project) notFound();
+  const gallery = workGallery[slug] || [];
 
   return (
     <main>
@@ -66,6 +68,22 @@ export default async function CaseStudyPage({ params }) {
             )}
           </div>
           <p className="prose">{project.body}</p>
+
+          {gallery.length > 0 && (
+            <div className="work-gallery">
+              {gallery.map((image, index) => (
+                <div className="work-gallery-item" key={index}>
+                  <Image
+                    src={image}
+                    alt={`${project.title} additional photo ${index + 1}`}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 700px) 100vw, 50vw"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

@@ -616,6 +616,18 @@ section {
 .case-body {
   padding: 22px;
 }
+.work-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.work-gallery-item {
+  position: relative;
+  height: 200px;
+  border: 1px solid var(--panel-line);
+  overflow: hidden;
+}
 .case-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
