@@ -106,7 +106,7 @@ export default function AboutPage() {
               <li>Licensed &amp; insured</li>
               <li>BICSI Individual Member</li>
               <li>CTS (AVIXA)-certified AV technicians*</li>
-              <li>Authorized dealer/partner: [manufacturer names]*</li>
+              <li>Authorized dealer/partner: LG</li>
             </ul>
             <p className="form-note" style={{ marginTop: 14 }}>
               * In progress — see the certification roadmap.

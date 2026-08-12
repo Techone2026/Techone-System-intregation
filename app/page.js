@@ -6,6 +6,7 @@ import { serviceImages } from "@/lib/serviceImages";
 import SignalPathDiagram from "@/components/SignalPathDiagram";
 import CTABand from "@/components/CTABand";
 import bicsiBadge from "@/public/images/badges/bicsi-individual-member.png";
+import lgLogo from "@/public/images/badges/lg-logo.png";
 
 export default function Home() {
   return (
@@ -52,7 +53,7 @@ export default function Home() {
             <div className="proof-cap">Commercial Sites Outfitted</div>
           </div>
           <div>
-            <div className="proof-num">[Mfr]</div>
+            <Image src={lgLogo} alt="LG" className="proof-badge" />
             <div className="proof-cap">Authorized Partner</div>
           </div>
           <div>
