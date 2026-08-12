@@ -1,6 +1,6 @@
-import { services } from "@/lib/services";
 import { business } from "@/lib/business";
 import { buildMetadata } from "@/lib/seo";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata = buildMetadata({
   title: "Contact | TechOne Installers",
@@ -52,56 +52,7 @@ export default function ContactPage() {
 
       <section style={{ paddingTop: 0 }}>
         <div className="wrap">
-          <form className="form-grid" style={{ maxWidth: 760 }}>
-            <div className="form-field">
-              <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" required />
-            </div>
-            <div className="form-field">
-              <label htmlFor="company">Company</label>
-              <input id="company" name="company" type="text" />
-            </div>
-            <div className="form-field">
-              <label htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" required />
-            </div>
-            <div className="form-field">
-              <label htmlFor="phone">Phone</label>
-              <input id="phone" name="phone" type="tel" />
-            </div>
-            <div className="form-field full">
-              <label htmlFor="serviceType">Service Type</label>
-              <select id="serviceType" name="serviceType" defaultValue="">
-                <option value="" disabled>
-                  Select a service
-                </option>
-                {services.map((service) => (
-                  <option key={service.slug} value={service.slug}>
-                    {service.name}
-                  </option>
-                ))}
-                <option value="other">Other / Not Sure</option>
-              </select>
-            </div>
-            <div className="form-field full">
-              <label htmlFor="details">Project Details</label>
-              <textarea
-                id="details"
-                name="details"
-                placeholder="Tell us about your space, timeline, and what you're trying to accomplish."
-              />
-            </div>
-            <div className="form-field full">
-              <button className="btn btn-solid" type="submit">
-                Request a Site Assessment
-              </button>
-            </div>
-          </form>
-          <p className="form-note">
-            This form is a UI placeholder — it isn&rsquo;t wired to a backend
-            or email yet. Connect it to a form service or API route before
-            launch.
-          </p>
+          <ContactForm />
         </div>
       </section>
     </main>
