@@ -452,6 +452,11 @@ svg.riser {
   font-weight: 700;
   color: var(--accent-bright);
 }
+.proof-badge {
+  height: 44px;
+  width: auto;
+  margin: 0 auto;
+}
 .proof-cap {
   font-family: var(--font-mono);
   font-size: 0.72rem;

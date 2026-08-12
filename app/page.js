@@ -5,6 +5,7 @@ import { caseStudies } from "@/lib/caseStudies";
 import { serviceImages } from "@/lib/serviceImages";
 import SignalPathDiagram from "@/components/SignalPathDiagram";
 import CTABand from "@/components/CTABand";
+import bicsiBadge from "@/public/images/badges/bicsi-individual-member.png";
 
 export default function Home() {
   return (
@@ -55,8 +56,12 @@ export default function Home() {
             <div className="proof-cap">Authorized Partner</div>
           </div>
           <div>
-            <div className="proof-num">BICSI</div>
-            <div className="proof-cap">Certified Cabling Team*</div>
+            <Image
+              src={bicsiBadge}
+              alt="BICSI Individual Member"
+              className="proof-badge"
+            />
+            <div className="proof-cap">BICSI Individual Member</div>
           </div>
         </div>
       </div>

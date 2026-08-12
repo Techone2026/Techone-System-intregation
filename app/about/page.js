@@ -104,7 +104,7 @@ export default function AboutPage() {
             <span className="section-tag">Credentials</span>
             <ul className="credentials-list">
               <li>Licensed &amp; insured</li>
-              <li>BICSI-certified structured cabling technicians*</li>
+              <li>BICSI Individual Member</li>
               <li>CTS (AVIXA)-certified AV technicians*</li>
               <li>Authorized dealer/partner: [manufacturer names]*</li>
             </ul>
