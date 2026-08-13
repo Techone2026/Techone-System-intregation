@@ -14,6 +14,7 @@ export default function sitemap() {
     "/careers",
     "/work",
     "/industries",
+    "/service-areas",
   ].map((path) => ({
     url: `${SITE_URL}${path}`,
     changeFrequency: "monthly",
