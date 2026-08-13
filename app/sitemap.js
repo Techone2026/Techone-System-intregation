@@ -11,6 +11,7 @@ export default function sitemap() {
     "/about",
     "/commercial",
     "/contact",
+    "/careers",
     "/work",
     "/industries",
   ].map((path) => ({

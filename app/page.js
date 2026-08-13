@@ -161,7 +161,7 @@ export default function Home() {
         heading="We're Looking for Installers"
         body="TechOne Installers is hiring experienced low-voltage and AV/security installers for our Central Ohio crews. If you take pride in clean cable runs and a job done right, we want to hear from you."
         ctaLabel="Join Our Team Today"
-        ctaHref="mailto:sales@techoneinstallers.com?subject=Installer%20Application"
+        ctaHref="/careers"
       />
 
       <section id="work">
