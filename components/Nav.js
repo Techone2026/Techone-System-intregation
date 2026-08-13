@@ -103,6 +103,13 @@ export default function Nav() {
               </li>
             ))}
           </ul>
+          <Link
+            className="btn btn-solid"
+            href="/contact"
+            onClick={() => setOpen(false)}
+          >
+            Request Assessment
+          </Link>
         </div>
       </div>
     </header>
