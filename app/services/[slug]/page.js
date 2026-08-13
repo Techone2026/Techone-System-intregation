@@ -31,9 +31,7 @@ export default async function ServicePage({ params }) {
       <section className="page-hero">
         <div className="grid-bg"></div>
         <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
-          <span className="eyebrow">
-            {service.index} / {service.tag}
-          </span>
+          <span className="eyebrow">{service.tag}</span>
           <h1
             style={{
               fontSize: "clamp(1.9rem, 3.4vw, 2.6rem)",
