@@ -24,7 +24,15 @@ export default function SignalPathDiagram() {
         <line x1="26" y1="144" x2="60" y2="144" stroke="#2B4E6C" strokeWidth="1.4" />
         <line x1="26" y1="156" x2="60" y2="156" stroke="#2B4E6C" strokeWidth="1.4" />
         <line x1="26" y1="168" x2="60" y2="168" stroke="#2B4E6C" strokeWidth="1.4" />
-        <text x="43" y="205" textAnchor="middle" className="mono" fontSize="9" fill="#8CA3B8">
+        <text
+          x="43"
+          y="205"
+          textAnchor="middle"
+          className="mono"
+          fontSize="9"
+          fontWeight="700"
+          fill="#8CA3B8"
+        >
           RACK
         </text>
 
