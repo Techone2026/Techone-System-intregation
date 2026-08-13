@@ -156,6 +156,14 @@ export default function Home() {
         </div>
       </section>
 
+      <CTABand
+        eyebrow="Become Part of the Team"
+        heading="We're Looking for Installers"
+        body="TechOne Installers is hiring experienced low-voltage and AV/security installers for our Central Ohio crews. If you take pride in clean cable runs and a job done right, we want to hear from you."
+        ctaLabel="Join Our Team Today"
+        ctaHref="mailto:sales@techoneinstallers.com?subject=Installer%20Application"
+      />
+
       <section id="work">
         <div className="wrap">
           <div className="section-head">
