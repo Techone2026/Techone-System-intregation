@@ -376,7 +376,7 @@ nav {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--mist);
+  color: var(--chalk);
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -416,7 +416,7 @@ svg.riser {
   font-family: var(--font-mono);
   font-size: 9px;
   font-weight: 700;
-  fill: var(--mist);
+  fill: var(--chalk);
 }
 .riser-node .pulse {
   fill: var(--led);

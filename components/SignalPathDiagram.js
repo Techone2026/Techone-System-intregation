@@ -31,7 +31,7 @@ export default function SignalPathDiagram() {
           className="mono"
           fontSize="9"
           fontWeight="700"
-          fill="#8CA3B8"
+          fill="#EDF1F4"
         >
           RACK
         </text>
