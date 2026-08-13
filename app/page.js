@@ -211,6 +211,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials — hidden until real client quotes are available.
       <section>
         <div className="wrap">
           <div className="section-head">
@@ -239,6 +240,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       <CTABand />
     </main>
