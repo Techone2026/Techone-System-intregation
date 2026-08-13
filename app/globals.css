@@ -278,6 +278,7 @@ nav {
   padding: 11px 20px;
   font-family: var(--font-mono);
   font-size: 0.82rem;
+  font-weight: 700;
   text-decoration: none;
   border: 1px solid var(--accent);
   color: var(--chalk);
