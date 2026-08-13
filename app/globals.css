@@ -331,19 +331,12 @@ nav {
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--accent-bright);
   text-transform: uppercase;
   margin-bottom: 20px;
-}
-.eyebrow::before {
-  content: "";
-  width: 16px;
-  height: 1px;
-  background: var(--accent-bright);
 }
 
 .hero h1 {
