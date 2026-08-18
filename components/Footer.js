@@ -87,6 +87,17 @@ export default function Footer() {
                 <li>
                   <Link href="/contact">Contact</Link>
                 </li>
+                <li>
+                  {/* Sister brand on its own domain. The schema.org
+                      subOrganization link needs a visible counterpart. */}
+                  <a
+                    href="https://techonesmartshield.com"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Smart Shield
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
