@@ -6,6 +6,9 @@ import { SITE_URL } from "@/lib/site";
 import { buildMetadata } from "@/lib/seo";
 import { organizationJsonLd } from "@/lib/schema";
 import JsonLd from "@/components/JsonLd";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import ContactClickTracking from "@/components/ContactClickTracking";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-display",
@@ -47,7 +50,9 @@ export default function RootLayout({ children }) {
         <Nav />
         {children}
         <Footer />
+        <ContactClickTracking />
       </body>
+      {GA_MEASUREMENT_ID && <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />}
     </html>
   );
 }

@@ -46,6 +46,33 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+## Analytics
+
+GA4 is wired up but stays off until a measurement ID is provided, so local
+dev and previews send nothing.
+
+To turn it on in production, add a repository secret named
+`NEXT_PUBLIC_GA_ID` (value looks like `G-XXXXXXXXXX`, from GA4 Admin >
+Data Streams). The deploy workflow passes it into `npm run build`. The site
+is a static export, so the ID is baked in at build time — changing the
+secret requires a redeploy, not just a page refresh.
+
+To test locally:
+
+```bash
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX npm run build
+```
+
+Events sent (see `lib/analytics.js`):
+
+| Event | Fires when |
+| --- | --- |
+| `generate_lead` | Contact form accepted by Formspree. Mark this as a key event in GA4. |
+| `phone_click` | Any `tel:` link clicked, with the page it happened on. |
+| `email_click` | Any `mailto:` link clicked. |
+| `careers_application` | Careers form accepted — kept separate so applicants never count as sales leads. |
+| `form_error` | A form POST failed. A spike here means leads are being lost. |
+
 ## Next steps
 
 - Replace all bracketed placeholder content (tagline, services, city

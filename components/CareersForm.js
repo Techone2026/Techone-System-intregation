@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { business } from "@/lib/business";
 import { FORMSPREE_FORM_ID } from "@/lib/formspree";
+import { EVENTS, trackEvent } from "@/lib/analytics";
 
 export default function CareersForm() {
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
@@ -25,11 +26,22 @@ export default function CareersForm() {
       if (response.ok) {
         setStatus("success");
         form.reset();
+        // Deliberately not the lead event — applicants aren't sales leads,
+        // and mixing them would inflate the conversion count.
+        trackEvent(EVENTS.careersApplication, { form_name: "careers" });
       } else {
         setStatus("error");
+        trackEvent(EVENTS.formError, {
+          form_name: "careers",
+          status_code: response.status,
+        });
       }
     } catch {
       setStatus("error");
+      trackEvent(EVENTS.formError, {
+        form_name: "careers",
+        status_code: "network",
+      });
     }
   }
 

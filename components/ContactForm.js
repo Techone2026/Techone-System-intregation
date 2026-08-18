@@ -4,6 +4,7 @@ import { useState } from "react";
 import { services } from "@/lib/services";
 import { business } from "@/lib/business";
 import { FORMSPREE_FORM_ID } from "@/lib/formspree";
+import { EVENTS, trackEvent } from "@/lib/analytics";
 
 export default function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | submitting | success | error
@@ -13,6 +14,8 @@ export default function ContactForm() {
     setStatus("submitting");
 
     const form = event.target;
+    // Read before reset() so the event still knows which service was picked.
+    const serviceType = new FormData(form).get("serviceType") || "unspecified";
     try {
       const response = await fetch(
         `https://formspree.io/f/${FORMSPREE_FORM_ID}`,
@@ -26,11 +29,25 @@ export default function ContactForm() {
       if (response.ok) {
         setStatus("success");
         form.reset();
+        // Only fires on a confirmed 2xx, so the conversion count matches the
+        // number of requests that actually reached Formspree.
+        trackEvent(EVENTS.lead, {
+          form_name: "contact",
+          service_type: serviceType,
+        });
       } else {
         setStatus("error");
+        trackEvent(EVENTS.formError, {
+          form_name: "contact",
+          status_code: response.status,
+        });
       }
     } catch {
       setStatus("error");
+      trackEvent(EVENTS.formError, {
+        form_name: "contact",
+        status_code: "network",
+      });
     }
   }
 
