@@ -38,6 +38,11 @@ export default function Footer() {
               {business.address.city}, {business.address.state}{" "}
               {business.address.zip}
             </p>
+            <p style={{ marginTop: 12 }}>
+              Mon&ndash;Sat 7am&ndash;7pm
+              <br />
+              Closed Sunday
+            </p>
           </div>
           <div className="footer-cols">
             <div className="footer-col">
