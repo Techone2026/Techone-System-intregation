@@ -5,6 +5,8 @@ import { getService } from "@/lib/services";
 import IndustryIcon from "@/components/IndustryIcon";
 import CTABand from "@/components/CTABand";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/schema";
+import JsonLd from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return verticals.map((vertical) => ({ slug: vertical.slug }));
@@ -32,6 +34,12 @@ export default async function VerticalPage({ params }) {
 
   return (
     <main>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Industries", path: "/industries" },
+          { name: vertical.name, path: `/industries/${vertical.slug}` },
+        ])}
+      />
       <section className="page-hero">
         <div className="grid-bg"></div>
         <div className="wrap" style={{ position: "relative", zIndex: 2 }}>

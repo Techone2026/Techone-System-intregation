@@ -115,7 +115,7 @@ export default function Home() {
           <div className="process-list">
             <div className="process-item">
               <div>
-                <h4>Site Assessment</h4>
+                <h3>Site Assessment</h3>
                 <p>
                   We evaluate your space, existing infrastructure, and goals
                   — on-site when needed — before a single component is
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
             <div className="process-item">
               <div>
-                <h4>System Design</h4>
+                <h3>System Design</h3>
                 <p>
                   A clear plan for what&rsquo;s being installed, where, how
                   it&rsquo;s wired, and how it performs — reviewed with you
@@ -135,7 +135,7 @@ export default function Home() {
             </div>
             <div className="process-item">
               <div>
-                <h4>Integration &amp; Install</h4>
+                <h3>Integration &amp; Install</h3>
                 <p>
                   Our technicians execute with attention to the details that
                   matter: cable management, testing, labeling, clean
@@ -145,7 +145,7 @@ export default function Home() {
             </div>
             <div className="process-item">
               <div>
-                <h4>Support</h4>
+                <h3>Support</h3>
                 <p>
                   We stay available for service, troubleshooting, and future
                   expansion as your needs change.
@@ -196,7 +196,7 @@ export default function Home() {
                     {project.tag}
                     {project.client ? ` · ${project.client}` : ""}
                   </span>
-                  <h4>{project.title}</h4>
+                  <h3>{project.title}</h3>
                   <p>{project.summary}</p>
                   <span className="case-link">Read the project →</span>
                 </div>

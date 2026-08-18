@@ -49,7 +49,7 @@ export default function IndustriesPage() {
                   slug={vertical.slug}
                   className="industry-card-icon"
                 />
-                <h3>{vertical.name}</h3>
+                <h2>{vertical.name}</h2>
                 <p>{vertical.tagline}</p>
                 <span className="service-link">Learn more →</span>
               </Link>

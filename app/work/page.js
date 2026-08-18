@@ -61,7 +61,7 @@ export default function WorkPage() {
                     {project.tag}
                     {project.client ? ` · ${project.client}` : ""}
                   </span>
-                  <h4>{project.title}</h4>
+                  <h2>{project.title}</h2>
                   <p>{project.summary}</p>
                   <span className="case-link">Read the project →</span>
                 </div>

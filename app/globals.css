@@ -545,6 +545,7 @@ section {
   margin-bottom: 18px;
   display: block;
 }
+.service-card h2,
 .service-card h3 {
   font-size: 1.12rem;
   font-weight: 600;
@@ -574,7 +575,7 @@ section {
   padding: 26px 0;
   border-bottom: 1px solid var(--panel-line);
 }
-.process-item h4 {
+.process-item h3 {
   font-size: 1.05rem;
   font-weight: 600;
   margin-bottom: 6px;
@@ -639,7 +640,8 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.case-body h4 {
+.case-body h2,
+.case-body h3 {
   font-size: 1.02rem;
   font-weight: 600;
   margin: 10px 0 8px;

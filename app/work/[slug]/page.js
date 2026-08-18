@@ -5,6 +5,8 @@ import { workImages } from "@/lib/workImages";
 import { workGallery } from "@/lib/workGallery";
 import CTABand from "@/components/CTABand";
 import { buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd } from "@/lib/schema";
+import JsonLd from "@/components/JsonLd";
 
 export function generateStaticParams() {
   return caseStudies.map((project) => ({ slug: project.slug }));
@@ -18,6 +20,7 @@ export async function generateMetadata({ params }) {
     title: `${project.title} | TechOne Installers`,
     description: project.summary,
     path: `/work/${project.slug}`,
+    type: "article",
   });
 }
 
@@ -29,6 +32,12 @@ export default async function CaseStudyPage({ params }) {
 
   return (
     <main>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Our Work", path: "/work" },
+          { name: project.title, path: `/work/${project.slug}` },
+        ])}
+      />
       <section className="page-hero">
         <div className="grid-bg"></div>
         <div className="wrap" style={{ position: "relative", zIndex: 2 }}>
