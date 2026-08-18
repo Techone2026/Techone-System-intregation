@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #3a3f45; }
+    a { color: #e05243; } a:hover { color: #c0392b; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1125px; height: 675px; background: #0f2a44; overflow: hidden;">
+<div style="position: relative; width: 360px; height: 216px; background: #0f2a44; overflow: hidden; font-family: 'IBM Plex Sans', system-ui, sans-serif; transform: scale(3.125); transform-origin: top left;">
+
+  <div style="position: absolute; inset: 0; opacity: 0.14; background-image: linear-gradient(#2b4e6c 1px, transparent 1px), linear-gradient(90deg, #2b4e6c 1px, transparent 1px); background-size: 48px 48px; background-position: center;"></div>
+
+  <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 8px; background: #c0392b;"></div>
+
+  <div style="position: absolute; left: 24px; top: 24px; width: 312px; height: 168px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 17px;">
+
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="./logo-mark.png" alt="" style="height: 42px; width: auto; display: block;">
+      <div style="display: flex; flex-direction: column; gap: 3px;">
+        <div style="font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 19px; line-height: 1; letter-spacing: 0.015em; color: #edf1f4; white-space: nowrap;">TECHONE INSTALLERS</div>
+        <div style="font-family: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace; font-weight: 400; font-size: 10px; line-height: 1; letter-spacing: 0.14em; color: #e05243; white-space: nowrap;">SYSTEMS INTEGRATION</div>
+      </div>
+    </div>
+
+    <div style="font-family: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace; font-weight: 500; font-size: 8px; line-height: 1; letter-spacing: 0.15em; color: #8ca3b8; white-space: nowrap;">AV &middot; SECURITY &middot; NETWORK INTEGRATION</div>
+
+  </div>
+
+  <sc-if value="{{ guides }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; inset: 0; pointer-events: none;">
+      <div style="position: absolute; left: 12px; top: 12px; width: 336px; height: 192px; outline: 1px solid rgba(224, 82, 67, 0.75);"></div>
+      <div style="position: absolute; left: 24px; top: 24px; width: 312px; height: 168px; outline: 1px dashed rgba(76, 175, 125, 0.95);"></div>
+    </div>
+  </sc-if>
+
+</div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"guides":{"editor":"boolean","default":false,"section":"Print"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { guides: this.props.guides ?? false };
+  }
+}
+</script>
+</body>
+</html>

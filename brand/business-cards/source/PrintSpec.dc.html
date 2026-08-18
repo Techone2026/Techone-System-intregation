@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #c0392b; } a:hover { color: #e05243; }
+  </style>
+</helmet>
+
+<div style="width: 700px; height: 560px; background: #ffffff; font-family: 'IBM Plex Sans', system-ui, sans-serif; padding: 34px; display: flex; flex-direction: column; gap: 22px;">
+
+  <div style="display: flex; flex-direction: column; gap: 6px;">
+    <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; color: #c0392b;">US STANDARD BUSINESS CARD</div>
+    <div style="font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; font-size: 25px; line-height: 1.15; letter-spacing: -0.015em; color: #0f2a44;">Three sizes, not one</div>
+    <div style="font-size: 13px; line-height: 1.5; color: #55606b; max-width: 62ch; text-wrap: pretty;">Artwork is built to the outer edge. It is cut at the middle line, and the cut drifts. Anything you need kept has to sit inside the inner line.</div>
+    <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.5; color: #0f2a44; background: #f7f8fa; border-left: 2px solid #c0392b; padding: 7px 10px; margin-top: 2px;">Upload at 1125 &times; 675 px &mdash; that is 300 dpi across the full bleed.</div>
+  </div>
+
+  <div style="position: relative; width: 576px; height: 346px; background: #0a1d30; align-self: center; flex-shrink: 0;">
+
+    <div style="position: absolute; left: 19px; top: 19px; right: 19px; bottom: 19px; outline: 1.5px solid #e05243;"></div>
+    <div style="position: absolute; left: 38px; top: 38px; right: 38px; bottom: 38px; outline: 1.5px dashed #4caf7d;"></div>
+
+    <div style="position: absolute; left: 38px; top: 38px; right: 38px; bottom: 38px; display: flex; align-items: center; justify-content: center;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; color: #4caf7d; text-align: center; line-height: 1.9;">SAFE AREA<br><span style="color: #8ca3b8; letter-spacing: 0.1em;">3.25 &times; 1.75 in</span><br><span style="color: #5f788a; font-size: 10px; letter-spacing: 0.08em;">everything readable lives here</span></div>
+    </div>
+
+    <div style="position: absolute; left: 6px; top: 4px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #8ca3b8;">BLEED 3.75 &times; 2.25</div>
+    <div style="position: absolute; left: 25px; top: 23px; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 9.5px; letter-spacing: 0.1em; color: #e05243;">TRIM 3.5 &times; 2</div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;">
+    <div style="display: flex; flex-direction: column; gap: 4px; border-top: 2px solid #8ca3b8; padding-top: 9px;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #0f2a44;">BLEED &mdash; 3.75 &times; 2.25 in</div>
+      <div style="font-size: 11.5px; line-height: 1.45; color: #55606b;">Build the file this size. Backgrounds run all the way out; nothing important goes here.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px; border-top: 2px solid #e05243; padding-top: 9px;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #0f2a44;">TRIM &mdash; 3.5 &times; 2 in</div>
+      <div style="font-size: 11.5px; line-height: 1.45; color: #55606b;">Where the blade lands, give or take about 1/16 in either way.</div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 4px; border-top: 2px solid #4caf7d; padding-top: 9px;">
+      <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: #0f2a44;">SAFE &mdash; 3.25 &times; 1.75 in</div>
+      <div style="font-size: 11.5px; line-height: 1.45; color: #55606b;">The dotted line in your vendor&rsquo;s editor. Text, logo and QR must all sit inside it.</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

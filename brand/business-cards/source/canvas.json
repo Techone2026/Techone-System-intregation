@@ -1,0 +1,11 @@
+{
+  "artboards": [
+    { "file": "Front.dc.html", "x": 0, "y": 0, "w": 1125, "h": 675, "title": "Front", "print": "fixed" },
+    { "file": "Back.dc.html", "x": 1225, "y": 0, "w": 1125, "h": 675, "title": "Back", "print": "fixed" },
+    { "file": "PrintSpec.dc.html", "x": 0, "y": 790, "w": 700, "h": 560, "title": "Print spec", "print": "fixed" }
+  ],
+  "annotations": [
+    { "id": "staples-note", "x": 780, "y": 790, "w": 300, "text": "Built to Staples' spec: 3.75 x 2.25in file, 0.125in bleed all round, 300 dpi.\n\nEverything readable sits inside 3.25 x 1.75in. Backgrounds and the red bar run off the edge on purpose.\n\nGuides are off by default — switch them on with the Guides toggle to check margins." }
+  ],
+  "launch": { "view": "canvas" }
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <style>
+    body { margin: 0; background: #3a3f45; }
+    a { color: #c0392b; } a:hover { color: #e05243; }
+  </style>
+</helmet>
+
+<div style="position: relative; width: 1125px; height: 675px; background: #ffffff; overflow: hidden;">
+<div style="position: relative; width: 360px; height: 216px; background: #ffffff; overflow: hidden; font-family: 'IBM Plex Sans', system-ui, sans-serif; transform: scale(3.125); transform-origin: top left;">
+
+  <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 8px; background: #c0392b;"></div>
+
+  <div style="position: absolute; left: 24px; top: 24px; width: 312px; height: 168px; display: flex; flex-direction: column; justify-content: space-between;">
+
+    <div style="display: flex; align-items: center; gap: 7px;">
+      <img src="./logo-mark.png" alt="" style="height: 21px; width: auto; display: block;">
+      <div style="display: flex; flex-direction: column; gap: 1.5px;">
+        <div style="font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 10px; line-height: 1; letter-spacing: 0.015em; color: #1a1a1a; white-space: nowrap;">TECHONE INSTALLERS</div>
+        <div style="font-family: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace; font-weight: 400; font-size: 6.5px; line-height: 1; letter-spacing: 0.13em; color: #c0392b; white-space: nowrap;">SYSTEMS INTEGRATION</div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: flex-end; gap: 16px;">
+
+      <div style="display: flex; flex-direction: column; gap: 7px; flex-grow: 1;">
+        <div style="display: flex; flex-direction: column; gap: 2.5px;">
+          <div style="font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 17px; line-height: 1.05; letter-spacing: -0.015em; color: #1a1a1a; white-space: nowrap;">Sheldon Lambert</div>
+          <div style="font-family: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace; font-weight: 500; font-size: 7.5px; line-height: 1; letter-spacing: 0.16em; color: #c0392b; white-space: nowrap;">CHIEF EXECUTIVE OFFICER</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 3.5px; font-family: 'IBM Plex Mono', 'Courier New', ui-monospace, monospace; font-size: 8.5px; line-height: 1.2; color: #55606b; white-space: nowrap;">
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 7px; height: 1.5px; background: #c0392b; flex-shrink: 0;"></span>
+            <span style="font-weight: 700; color: #1a1a1a;">(740) 419-1178</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 7px; height: 1.5px; background: #e2e5e8; flex-shrink: 0;"></span>
+            <span>sales@techoneinstallers.com</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 7px; height: 1.5px; background: #e2e5e8; flex-shrink: 0;"></span>
+            <span>techonesystemsintegration.com</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <span style="width: 7px; height: 1.5px; background: #e2e5e8; flex-shrink: 0;"></span>
+            <span>2545 Farmers Dr #100, Columbus, OH 43235</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0;">
+        <img src="./qr.png" alt="Scan to leave a Google review" style="width: 72px; height: 72px; display: block; image-rendering: pixelated;">
+      </div>
+
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 4px;">
+      <div style="width: 100%; height: 1px; background: #e2e5e8;"></div>
+      <div style="font-size: 8px; line-height: 1.35; color: #55606b; white-space: nowrap;"><span style="font-weight: 600; color: #1a1a1a;">Happy with the work?</span> Scan to leave us a quick review on Google.</div>
+    </div>
+
+  </div>
+
+  <sc-if value="{{ guides }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; inset: 0; pointer-events: none;">
+      <div style="position: absolute; left: 12px; top: 12px; width: 336px; height: 192px; outline: 1px solid rgba(192, 57, 43, 0.7);"></div>
+      <div style="position: absolute; left: 24px; top: 24px; width: 312px; height: 168px; outline: 1px dashed rgba(15, 42, 68, 0.55);"></div>
+    </div>
+  </sc-if>
+
+</div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"guides":{"editor":"boolean","default":false,"section":"Print"}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { guides: this.props.guides ?? false };
+  }
+}
+</script>
+</body>
+</html>
